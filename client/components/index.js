@@ -111,12 +111,23 @@ export default class Main extends Component {
 
   handleSubmit(e){
     e.preventDefault();
+    var data = {
+      email: this.email.value,
+      name: this.name.value,
+      phone: this.phone.value,
+      company: this.company.value,
+      message: this.message.value
+    };
     this.email.value = "";
     this.name.value = "";
     this.phone.value = "";
     this.company.value = "";
     this.message.value = "";
     swal("Success", "We will contact you in a moment!");
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/signup", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
     return false;
   }
   

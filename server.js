@@ -26,6 +26,8 @@ app.use('*', function(req, res){
   res.sendFile(__dirname + '/views/index.html');
 });
 
+require('./route/User')(app);
+
 server.listen(5000, () => {
   console.log('listening on 5000');
 });
