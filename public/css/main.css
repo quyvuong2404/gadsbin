@@ -405,6 +405,7 @@ section[class^="s-"] {
   color: #cd201f !important; }
 
 #layout {
+      margin-top: 70px;
   padding-top: 1px;
   position: relative;
   z-index: 50;
@@ -1255,7 +1256,7 @@ section[class^="s-"] {
     .s-contact--form .btn-submit {
       margin-top: 15px; }
   .s-contact #map {
-    height: 400px; }
+    height: 600px; }
 
 /* [Footer] */
 .main-footer {

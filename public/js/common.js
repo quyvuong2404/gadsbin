@@ -55,15 +55,15 @@ $(function() {
 
 	//Rellax JS
 	var rellax;
-	if( $(window).width() > 991 ) rellax = new Rellax(".rellax-js");
+	// if( $(window).width() > 991 ) rellax = new Rellax(".rellax-js");
 
 	//Scroll active section
-	$(window).on("scroll", get_scroll_item);
-	$(window).on("load", get_scroll_item);
+	// $(window).on("scroll", get_scroll_item);
+	// $(window).on("load", get_scroll_item);
 	
 	//Fixed Header
-	$(window).on("scroll", sticky_header);
-	$(window).on("load", sticky_header);
+	// $(window).on("scroll", sticky_header);
+	// $(window).on("load", sticky_header);
 
 	//Sandwitch
 	// var sandwitch = $(".sandwitch");
