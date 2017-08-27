@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 export default class Statistics extends Component {
   constructor(props) {
@@ -9,6 +10,29 @@ export default class Statistics extends Component {
     return (
       <div className="container">
         <div id="layout">
+          <header id="top-header" className="site-header">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                  <Link to="/" className="site-header--logo">
+                    <span>gads</span><span style={{ color: "#65d840" }}>!Bin</span>
+                  </Link>
+                </div>
+                <div style={{display: "none"}} className="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                  <nav id="main-menu" className="site-header--menu">
+                    <ul>
+                      <li><Link to="/">Home</Link></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div className="sandwitch">
+                  <div className="sw-top"></div>
+                  <div className="sw-mid"></div>
+                  <div className="sw-bot"></div>
+                </div>
+              </div>
+            </div>
+          </header>
           <div className="jumbotron">
             <h1>Trung Tâm Anh Ngữ Ila</h1>
           </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import axios from 'axios';
 var map;
 
 export default class Main extends Component {
@@ -11,6 +12,9 @@ export default class Main extends Component {
     };
   }
   componentDidMount() {
+    $(".preloader-inner").fadeOut();
+    $(".preloader").delay(400).fadeOut("slow");
+
     var self = this;
     var mapElement = document.getElementById('map');
     if (navigator.geolocation) {
@@ -124,10 +128,13 @@ export default class Main extends Component {
     this.company.value = "";
     this.message.value = "";
     swal("Success", "We will contact you in a moment!");
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/signup", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(data));
+    axios({
+      method: "POST",
+      url: "/signup",
+      data: {
+        email: data.email
+      }
+    });
     return false;
   }
   
@@ -146,16 +153,16 @@ export default class Main extends Component {
                   <span>gads</span><span style={{color: "#65d840"}}>!Bin</span>
                 </a>
               </div>
-              <div style={{ display: "none" }} className="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+              <div className="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                 <nav id="main-menu" className="site-header--menu">
                   <ul>
-                    <li><a href="#welcome">Welcome</a></li>
-                    <li><a href="#service">Service</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#get-app">Download</a></li>
-                    <li><a href="#requirement">Requirement</a></li>
-                    <li><a href="#contact">Sign Up</a></li>
+                    <li><Link to="/statistics/trung-tam-anh-ngu-ila">Statistics</Link></li>
+                    {/* <li><a href="#service">Service</a></li> */}
+                    {/* <li><a href="#features">Features</a></li> */}
+                    {/* <li><a href="#testimonials">Testimonials</a></li> */}
+                    {/* <li><a href="#get-app">Download</a></li> */}
+                    {/* <li><a href="#requirement">Requirement</a></li> */}
+                    {/* <li><a href="#contact">Sign Up</a></li> */}
                   </ul>
                 </nav>
               </div>

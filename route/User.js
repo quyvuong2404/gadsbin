@@ -2,15 +2,15 @@
 var { sendMail } = require('../lib/email');
 
 module.exports = function(app){
-  app.router('/signup')
+  app.route('/signup')
     .post((req, res) => {
       var { email, company, name, phone, message, location } = req.body;
       sendMail({
         to: email,
-        subject: "",
+        subject: "Gads!Bin - Payment Information",
         body: ""
       });
-      rer.json({
+      res.json({
         success: true
       });
     });
